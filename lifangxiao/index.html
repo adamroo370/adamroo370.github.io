@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>李芳晓-知名作家与资深编辑的文学创作历程</title>
+    <meta name="description" content="李芳晓，知名当代作家与资深文学编辑。本站收录其代表作品、创作理念、编辑生涯及个人访谈，展现其在现实主义文学领域的深厚造诣。">
+    <meta name="keywords" content="李芳晓,作家,文学,编辑,作品集,访谈">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #c0392b;
+            --bg-color: #f9f9f9;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .nav-cta {
+            background-color: var(--primary-color);
+            color: white !important;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+
+        .nav-cta:hover {
+            background-color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 4rem 0;
+            background-color: var(--card-bg);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .profile-card {
+            background: var(--bg-color);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            border: 1px solid #eee;
+        }
+
+        .profile-avatar {
+            width: 120px;
+            height: 120px;
+            background-color: #ddd;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            overflow: hidden;
+            background-image: url('https://picsum.photos/seed/lifangxiao/200/200.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .profile-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-title {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .profile-info-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+            font-size: 0.9rem;
+        }
+
+        .profile-info-item:last-child {
+            border-bottom: none;
+        }
+
+        .profile-info-label {
+            color: var(--text-secondary);
+        }
+
+        .about-content h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            border-left: 5px solid var(--accent-color);
+            padding-left: 1rem;
+        }
+
+        .about-content p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        /* Works Section */
+        .works {
+            padding: 4rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+        }
+
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .work-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .work-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .work-cover {
+            height: 200px;
+            background-color: #ddd;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .work-info {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .work-tag {
+            background-color: #eef2f5;
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            align-self: flex-start;
+            margin-bottom: 0.5rem;
+        }
+
+        .work-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .work-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        .work-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            border-top: 1px solid #eee;
+            padding-top: 1rem;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .quote-text {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-bottom: 1rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .quote-author {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        /* Interview Section */
+        .interview {
+            padding: 4rem 0;
+            background-color: var(--card-bg);
+        }
+
+        .interview-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .interview-item {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            border: 1px solid #eee;
+            border-radius: var(--border-radius);
+            transition: box-shadow 0.3s;
+        }
+
+        .interview-item:hover {
+            box-shadow: var(--shadow);
+        }
+
+        .interview-date {
+            min-width: 100px;
+            text-align: center;
+            padding-top: 0.5rem;
+        }
+
+        .interview-date .year {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            display: block;
+        }
+
+        .interview-date .month {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .interview-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .interview-content h3 a:hover {
+            color: var(--accent-color);
+        }
+
+        .interview-content p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a252f;
+            color: #bdc3c7;
+            padding: 3rem 0;
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #34495e;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0;
+                gap: 1rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .interview-item {
+                flex-direction: column;
+            }
+
+            .interview-date {
+                text-align: left;
+                padding: 0;
+                display: flex;
+                align-items: baseline;
+                gap: 0.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">李芳晓<span>.</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#about">人物简介</a></li>
+                    <li><a href="#works">代表作品</a></li>
+                    <li><a href="#interview">深度访谈</a></li>
+                    <li><a href="#contact">联系合作</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="nav-cta">订阅专栏</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>李芳晓</h1>
+            <p>以笔为犁，深耕现实主义的文学耕耘者。记录时代变迁，探寻人性幽微。</p>
+            <div class="hero-badges">
+                <span class="badge">茅盾文学奖提名</span>
+                <span class="badge">资深文学编辑</span>
+                <span class="badge">纪实文学专家</span>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="profile-card">
+                        <div class="profile-avatar"></div>
+                        <h3 class="profile-name">李芳晓</h3>
+                        <p class="profile-title">作家 / 编辑 / 散文家</p>
+                        <div class="profile-info-item">
+                            <span class="profile-info-label">出生地</span>
+                            <span>江苏苏州</span>
+                        </div>
+                        <div class="profile-info-item">
+                            <span class="profile-info-label">出生年份</span>
+                            <span>1975年</span>
+                        </div>
+                        <div class="profile-info-item">
+                            <span class="profile-info-label">代表作</span>
+                            <span>《流年》系列</span>
+                        </div>
+                        <div class="profile-info-item">
+                            <span class="profile-info-label">现任职务</span>
+                            <span>《文学观察》主编</span>
+                        </div>
+                    </div>
+                    <div class="about-content">
+                        <h2>文学之路与创作理念</h2>
+                        <p>李芳晓，当代中国文坛具有影响力的作家与资深编辑。她出生于江南水乡，自幼受传统文化熏陶，后投身文学创作与编辑工作三十余年。其作品以细腻的笔触、宏大的叙事结构和对社会现实的深刻洞察而著称，擅长在平凡的生活琐事中折射时代的变迁。</p>
+                        <p>作为编辑，李芳晓曾发掘并培养多部具有影响力的现实主义题材作品，被誉为“文学伯乐”。她主张“文学即人学”，坚持在作品中保留人性的温度与厚度，反对过度商业化与形式主义的空洞堆砌。</p>
+                        <p>近年来，李芳晓将创作重心转向非虚构写作与长篇散文，致力于通过文字修复被遗忘的历史记忆，为当代文学注入深沉的历史感与现实关怀。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="quote-section">
+            <div class="container">
+                <p class="quote-text">“写作不是为了迎合读者的期待，而是为了回应生活的提问。每一个文字背后，都应站立着一个真实而疼痛的灵魂。”</p>
+                <p class="quote-author">—— 李芳晓</p>
+            </div>
+        </section>
+
+        <section id="works" class="works">
+            <div class="container">
+                <div class="section-header">
+                    <h2>代表作品</h2>
+                    <p>精选李芳晓老师最具影响力的小说与非虚构作品</p>
+                </div>
+                <div class="works-grid">
+                    <!-- Book 1 -->
+                    <article class="work-card">
+                        <div class="work-cover" style="background-image: url('https://picsum.photos/seed/book1/400/300.jpg');"></div>
+                        <div class="work-info">
+                            <span class="work-tag">长篇小说</span>
+                            <h3 class="work-title"><a href="#">《流年·春》</a></h3>
+                            <p class="work-desc">讲述了上世纪九十年代南方小城的时代变迁与个人命运的沉浮，获年度最佳小说奖。</p>
+                            <div class="work-meta">
+                                <span>2018年出版</span>
+                                <span>点击阅读</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Book 2 -->
+                    <article class="work-card">
+                        <div class="work-cover" style="background-image: url('https://picsum.photos/seed/book2/400/300.jpg');"></div>
+                        <div class="work-info">
+                            <span class="work-tag">非虚构/散文</span>
+                            <h3 class="work-title"><a href="#">《寻找失落的徽标》</a></h3>
+                            <p class="work-desc">深入民间，记录即将消失的手工艺与老手艺人的生存现状，情感真挚，发人深省。</p>
+                            <div class="work-meta">
+                                <span>2021年出版</span>
+                                <span>点击阅读</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Book 3 -->
+                    <article class="work-card">
+                        <div class="work-cover" style="background-image: url('https://picsum.photos/seed/book3/400/300.jpg');"></div>
+                        <div class="work-info">
+                            <span class="work-tag">中短篇小说集</span>
+                            <h3 class="work-title"><a href="#">《城市边缘人》</a></h3>
+                            <p class="work-desc">聚焦城市化进程中外来务工人员的生存状态，以冷峻的视角展现边缘群体的内心世界。</p>
+                            <div class="work-meta">
+                                <span>2015年出版</span>
+                                <span>点击阅读</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="interview" class="interview">
+            <div class="container">
+                <div class="section-header">
+                    <h2>深度访谈</h2>
+                    <p>关于写作、时代与文学的独家对话</p>
+                </div>
+                <div class="interview-list">
+                    <article class="interview-item">
+                        <div class="interview-date">
+                            <span class="year">2023</span>
+                            <span class="month">10月</span>
+                        </div>
+                        <div class="interview-content">
+                            <h3><a href="#">专访李芳晓：在碎片化时代坚守文学的长河</a></h3>
+                            <p>面对短视频与快餐文化的冲击，资深作家李芳晓谈到了她对文学创作节奏的把控以及如何在信息洪流中保持独立思考。</p>
+                        </div>
+                    </article>
+
+                    <article class="interview-item">
+                        <div class="interview-date">
+                            <span class="year">2022</span>
+                            <span class="month">05月</span>
+                        </div>
+                        <div class="interview-content">
+                            <h3><a href="#">李芳晓：编辑是作家的“守夜人”</a></h3>
+                            <p>作为《文学观察》主编，她分享了多年编辑生涯中遇到的优秀作品与背后的故事，以及编辑与作者之间微妙的关系。</p>
+                        </div>
+                    </article>
+
+                    <article class="interview-item">
+                        <div class="interview-date">
+                            <span class="year">2020</span>
+                            <span class="month">12月</span>
+                        </div>
+                        <div class="interview-content">
+                            <h3><a href="#">从江南水乡到世界文坛：李芳晓的创作之路</a></h3>
+                            <p>回顾她的创作历程，探讨地域文化如何影响作家的审美与风格，以及她如何将东方美学融入国际化的叙事中。</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section" style="padding: 4rem 0; background-color: var(--bg-color);">
+            <div class="container" style="text-align: center; max-width: 600px;">
+                <h2 style="margin-bottom: 1rem;">关注李芳晓</h2>
+                <p style="margin-bottom: 2rem; color: var(--text-secondary);">获取最新出版资讯、活动预告及独家创作随笔。</p>
+                <form style="display: flex; gap: 10px; flex-wrap: wrap;" onsubmit="event.preventDefault(); alert('感谢您的订阅！');">
+                    <input type="email" placeholder="请输入您的邮箱地址" required style="flex: 1; padding: 0.8rem; border: 1px solid #ddd; border-radius: 4px;">
+                    <button type="submit" style="padding: 0.8rem 2rem; background-color: var(--accent-color); color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: 600;">订阅</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于李芳晓</h4>
+                    <ul>
+                        <li><a href="#about">人物简介</a></li>
+                        <li><a href="#works">作品目录</a></li>
+                        <li><a href="#interview">媒体报道</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>邮箱：contact@lifangxiao.com</li>
+                        <li>地址：北京市朝阳区文学艺术中心</li>
+                        <li>版权所有 © 2023 李芳晓工作室</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>友情链接</h4>
+                    <ul>
+                        <li><a href="#">中国作家协会</a></li>
+                        <li><a href="#">文学观察杂志</a></li>
+                        <li><a href="#">江南文学网</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>本网站为展示用静态页面，内容仅供参考。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

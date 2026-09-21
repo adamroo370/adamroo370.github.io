@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="今世诡异秘闻 - 汇集全球都市传说、民间怪谈与未解之谜。提供深度调查、目击者证词及专家解读，探索现实世界中那些令人毛骨悚然的神秘事件。">
+    <meta name="keywords" content="今世诡异秘闻,都市传说,民间怪谈,未解之谜,神秘事件,灵异故事,恐怖故事">
+    <title>今世诡异秘闻 - 深度调查与神秘事件档案</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --bg-dark: #0f0f13;
+            --bg-card: #1a1a20;
+            --bg-card-hover: #25252e;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --accent-red: #8b0000;
+            --accent-gold: #d4af37;
+            --border-color: #333;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 4px solid var(--accent-red);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title span {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: normal;
+            border-left: none;
+            padding-left: 0;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(15, 15, 19, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            padding: 0.8rem 0;
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-red);
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo::before {
+            content: "❧";
+            color: var(--accent-gold);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-gold);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-gold);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .search-box {
+            display: flex;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .search-box input {
+            background: transparent;
+            border: none;
+            padding: 0.5rem 0.8rem;
+            color: var(--text-main);
+            outline: none;
+            width: 150px;
+        }
+
+        .search-box button {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            padding: 0 0.8rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            margin-bottom: 3rem;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(15,15,19,0.3), var(--bg-dark)), 
+                        url('https://picsum.photos/seed/ghost/1920/600') center/cover no-repeat;
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #ddd;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--accent-red);
+            color: white;
+            border-radius: 2px;
+            font-weight: bold;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #a50000;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--text-main);
+            margin-left: 1rem;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+        }
+
+        /* Main Grid Layout */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        /* Article List */
+        .article-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            border-color: var(--accent-red);
+        }
+
+        .article-image {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            filter: brightness(0.8) contrast(1.1);
+        }
+
+        .article-content {
+            padding: 1.5rem;
+        }
+
+        .article-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .article-tag {
+            color: var(--accent-red);
+            font-weight: bold;
+        }
+
+        .article-title {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .article-excerpt {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .read-more {
+            color: var(--accent-gold);
+            font-weight: bold;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .read-more::after {
+            content: '→';
+            margin-left: 5px;
+            transition: margin-left 0.2s;
+        }
+
+        .read-more:hover::after {
+            margin-left: 10px;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .widget-title {
+            font-size: 1.2rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .rank-list li {
+            display: flex;
+            align-items: baseline;
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px dashed #333;
+        }
+
+        .rank-num {
+            color: var(--accent-red);
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-right: 0.8rem;
+            width: 1.5rem;
+            text-align: center;
+        }
+
+        .rank-num.top-3 {
+            color: var(--accent-gold);
+            font-size: 1.3rem;
+        }
+
+        .rank-title {
+            font-size: 0.95rem;
+            color: var(--text-main);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+        }
+
+        .cat-item {
+            background: rgba(255,255,255,0.05);
+            padding: 0.8rem;
+            text-align: center;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .cat-item:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .cat-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .cat-name {
+            font-size: 0.9rem;
+        }
+
+        /* Feature Section (Dark Mood) */
+        .feature-section {
+            background-color: #000;
+            padding: 4rem 0;
+            margin-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .feature-item {
+            text-align: center;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1.5rem;
+            background: radial-gradient(circle, var(--accent-red) 0%, transparent 70%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .feature-item h3 {
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .feature-item p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-card);
+            padding: 3rem 0;
+            margin-top: 4rem;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            color: var(--text-main);
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-col a:hover {
+            color: var(--accent-gold);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #2a2a35;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-inner {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-inner">
+            <div class="logo">今世诡异秘闻</div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">都市传说</a></li>
+                    <li><a href="#">民间怪谈</a></li>
+                    <li><a href="#">未解之谜</a></li>
+                    <li><a href="#">灵异档案</a></li>
+                    <li><a href="#">调查纪实</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索秘闻...">
+                <button>🔍</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-content">
+                <h1>探索现实世界的隐秘角落</h1>
+                <p>我们致力于搜集与整理全球范围内那些令人不安却又引人入胜的诡异事件。从深夜的都市传说到深山的民间禁忌，揭开表象之下的真相。</p>
+                <div>
+                    <button class="btn">阅读今日头条</button>
+                    <button class="btn btn-outline">投稿你的经历</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="main-grid">
+                <!-- Left Column: Content -->
+                <section class="content-area">
+                    <div class="section-title">
+                        最新诡异档案
+                        <span>每日更新 · 深度调查</span>
+                    </div>
+
+                    <!-- Article 1 -->
+                    <article class="article-card">
+                        <img src="https://picsum.photos/seed/forest/800/400" alt="荒村秘境" class="article-image">
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <span class="article-tag">【民间怪谈】</span>
+                                <span>2023-10-24</span>
+                                <span>👁 12,403 阅读</span>
+                            </div>
+                            <h2 class="article-title"><a href="#">荒村深处的无头佛像与午夜哭声</a></h2>
+                            <p class="article-excerpt">在湘西深山的一个废弃村落，探险队记录下了令人毛骨悚然的现象。佛像为何会流下红色的液体？午夜传来的哭声究竟源自何处？本文将为您还原现场调查细节。</p>
+                            <a href="#" class="read-more">继续阅读</a>
+                        </div>
+                    </article>
+
+                    <!-- Article 2 -->
+                    <article class="article-card">
+                        <img src="https://picsum.photos/seed/subway/800/400" alt="地铁幻影" class="article-image">
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <span class="article-tag">【都市传说】</span>
+                                <span>2023-10-23</span>
+                                <span>👁 8,921 阅读</span>
+                            </div>
+                            <h2 class="article-title"><a href="#">凌晨四点的地铁：关于“13号车厢”的调查</a></h2>
+                            <p class="article-excerpt">多位乘客反映在深夜的地铁线路中，偶尔会出现一节空荡荡的13号车厢。当列车门打开时，里面没有乘客，却总是弥漫着一种陈旧的气息。这究竟是人为的恶作剧还是超自然的巧合？</p>
+                            <a href="#" class="read-more">继续阅读</a>
+                        </div>
+                    </article>
+
+                    <!-- Article 3 -->
+                    <article class="article-card">
+                        <img src="https://picsum.photos/seed/phone/800/400" alt="灵异照片" class="article-image">
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <span class="article-tag">【灵异档案】</span>
+                                <span>2023-10-22</span>
+                                <span>👁 5,600 阅读</span>
+                            </div>
+                            <h2 class="article-title"><a href="#">深夜手机自动拍照：镜中人的真相</a></h2>
+                            <p class="article-excerpt">一位摄影师在整理旧照片时发现，自己从未拍过的照片中，背景里总是多出一个人影。经过技术分析，这些照片并非合成，而是确确实实被设备拍摄下来的。这是设备故障还是……</p>
+                            <a href="#" class="read-more">继续阅读</a>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- Right Column: Sidebar -->
+                <aside class="sidebar">
+                    <!-- Categories -->
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">秘闻分类</h3>
+                        <div class="category-grid">
+                            <a href="#" class="cat-item">
+                                <span class="cat-icon">🌃</span>
+                                <span class="cat-name">都市传说</span>
+                            </a>
+                            <a href="#" class="cat-item">
+                                <span class="cat-icon">🏚️</span>
+                                <span class="cat-name">废弃建筑</span>
+                            </a>
+                            <a href="#" class="cat-item">
+                                <span class="cat-icon">🧟</span>
+                                <span class="cat-name">超自然生物</span>
+                            </a>
+                            <a href="#" class="cat-item">
+                                <span class="cat-icon">📜</span>
+                                <span class="cat-name">古籍禁忌</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Hot List -->
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">本周热门</h3>
+                        <ul class="rank-list">
+                            <li>
+                                <span class="rank-num top-3">1</span>
+                                <a href="#" class="rank-title">故宫深夜的巡逻脚步声</a>
+                            </li>
+                            <li>
+                                <span class="rank-num top-3">2</span>
+                                <a href="#" class="rank-title">雪山下的无名女尸</a>
+                            </li>
+                            <li>
+                                <span class="rank-num top-3">3</span>
+                                <a href="#" class="rank-title">被诅咒的家族照片</a>
+                            </li>
+                            <li>
+                                <span class="rank-num">4</span>
+                                <a href="#" class="rank-title">海怪目击报告汇总</a>
+                            </li>
+                            <li>
+                                <span class="rank-num">5</span>
+                                <a href="#" class="rank-title">深夜出租车司机见闻</a>
+                            </li>
+                            <li>
+                                <span class="rank-num">6</span>
+                                <a href="#" class="rank-title">为什么不能对着镜子笑？</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Ad Placeholder -->
+                    <div class="sidebar-widget" style="text-align: center; background: #000; border: 1px dashed #444; color: #666; font-size: 0.8rem; padding: 2rem;">
+                        <p>广告位招租</p>
+                        <p>神秘事件观察团</p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+
+        <!-- Feature Section -->
+        <section class="feature-section">
+            <div class="container">
+                <div class="section-title">
+                    <span>关于我们</span>
+                </div>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">👁</div>
+                        <h3>客观调查</h3>
+                        <p>我们坚持理性视角，不造神、不迷信，只提供基于事实的调查报告与多方证词。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🤝</div>
+                        <h3>社区互助</h3>
+                        <p>汇聚全球探险家与灵异爱好者，分享经验，互相印证，共同揭开迷雾。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>安全第一</h3>
+                        <p>探险需谨慎，我们提供专业的野外生存指南与避坑建议，保障探索安全。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 1rem;">今世诡异秘闻</div>
+                    <p>探索未知的边界，记录真实的存在。这里是所有神秘事件爱好者的栖息地。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>栏目导航</h4>
+                    <ul>
+                        <li><a href="#">最新发布</a></li>
+                        <li><a href="#">深度调查</a></li>
+                        <li><a href="#">恐怖图集</a></li>
+                        <li><a href="#">视频档案</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>相关专题</h4>
+                    <ul>
+                        <li><a href="#">全球未解之谜</a></li>
+                        <li><a href="#">中国民间怪谈</a></li>
+                        <li><a href="#">国外灵异事件</a></li>
+                        <li><a href="#">心理与玄学</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">新浪微博</a></li>
+                        <li><a href="#">知乎专栏</a></li>
+                        <li><a href="#">Bilibili</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 今世诡异秘闻网 版权所有. 本站内容仅供娱乐与参考，请勿轻信迷信。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                                                  </html>

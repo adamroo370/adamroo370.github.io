@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="鳌头网 - 提供权威的建筑风水知识、鳌头镇旅游指南、鳌鱼雕塑文化解读及地方特产推荐。专注传统文化与现代生活的融合。">
+    <meta name="keywords" content="鳌头,鳌头镇,鳌头旅游,风水鳌头,鳌鱼文化,广东从化鳌头">
+    <title>鳌头-鳌头镇旅游指南与传统文化生活服务平台</title>
+    <style>
+        :root {
+            --primary-color: #2c5f2d; /* 森林绿 */
+            --secondary-color: #97bc62; /* 嫩草绿 */
+            --accent-color: #d4a373; /* 土壤褐 */
+            --text-dark: #333333;
+            --text-light: #666666;
+            --bg-light: #f9fbf9;
+            --white: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background-color: var(--primary-color);
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 85%, 0% 100%);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 16px;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .cta-button {
+            background-color: var(--primary-color);
+            color: var(--white) !important;
+            padding: 8px 20px;
+            border-radius: 20px;
+        }
+
+        .cta-button:hover {
+            background-color: #1e4220;
+            color: var(--white) !important;
+        }
+
+        /* Hero 区域 */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://picsum.photos/seed/maotou/1600/900') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            padding: 12px 35px;
+            background-color: var(--accent-color);
+            color: var(--white);
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 18px;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .hero-btn:hover {
+            background-color: #c0885e;
+            transform: translateY(-2px);
+        }
+
+        /* 章节通用样式 */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            font-size: 16px;
+        }
+
+        /* 关于鳌头 */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            color: var(--text-light);
+            text-align: justify;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        /* 文化解读 */
+        .culture-section {
+            background-color: var(--white);
+        }
+
+        .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .culture-card {
+            background: var(--bg-light);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            border: 1px solid #eee;
+            transition: box-shadow 0.3s;
+        }
+
+        .culture-card:hover {
+            box-shadow: var(--shadow);
+        }
+
+        .culture-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .culture-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .culture-card p {
+            color: var(--text-light);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        /* 旅游指南 */
+        .tour-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .tour-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            height: 250px;
+        }
+
+        .tour-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .tour-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .tour-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 20px;
+            color: var(--white);
+        }
+
+        .tour-overlay h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .tour-overlay span {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        /* 常见问题 */
+        .faq-section {
+            background-color: var(--white);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            margin-bottom: 10px;
+        }
+
+        .faq-question {
+            padding: 20px 0;
+            font-weight: bold;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 24px;
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            color: var(--text-light);
+        }
+
+        .faq-answer p {
+            padding-bottom: 20px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #1a1a1a;
+            color: #ccc;
+            padding: 50px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            font-size: 14px;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* 简化处理，移动端隐藏导航链接 */
+            }
+            
+            .hero-content h1 {
+                font-size: 32px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tour-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 顶部导航 -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <span></span>
+                鳌头网
+            </a>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#about">鳌头概况</a>
+                <a href="#culture">文化解读</a>
+                <a href="#tour">旅游指南</a>
+                <a href="#faq">常见问题</a>
+            </nav>
+            <a href="#tour" class="cta-button">探索鳌头</a>
+        </div>
+    </header>
+
+    <!-- 首屏 Hero -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>登顶鳌头，一览众山小</h1>
+            <p>探索鳌头镇的历史底蕴、自然风光与独特文化，为您提供最详尽的旅行攻略与生活指南。</p>
+            <a href="#about" class="hero-btn">了解更多</a>
+        </div>
+    </section>
+
+    <!-- 关于鳌头 -->
+    <section id="about" class="container">
+        <div class="section-title">
+            <h2>关于鳌头</h2>
+            <p>广州北部的门户，岭南文化的重要发源地之一</p>
+        </div>
+        <div class="about-grid">
+            <div class="about-text">
+                <h3>千年古镇，活力新城</h3>
+                <p>鳌头镇位于广东省广州市从化区西北部，是广州的北大门，也是从化区的经济重镇。这里山清水秀，人文荟萃，拥有深厚的历史文化积淀。</p>
+                <p>“鳌头”之名源于古代风水传说，寓意独占鳌头、出类拔萃。镇内不仅保存着众多明清时期的古建筑，还融合了现代都市的便捷生活，是传统与现代完美结合的典范。</p>
+                <p>无论是寻求历史足迹的旅行者，还是寻找生态氧吧的市民，鳌头都能满足您的需求。这里不仅是宜居的家园，更是体验岭南风情的绝佳去处。</p>
+            </div>
+            <div class="about-image">
+                <img src="https://picsum.photos/seed/maotou2/600/400" alt="鳌头古镇风光">
+            </div>
+        </div>
+    </section>
+
+    <!-- 文化解读 -->
+    <section id="culture" class="culture-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>文化解读</h2>
+                <p>深入理解“鳌头”背后的寓意与当地特色</p>
+            </div>
+            <div class="culture-grid">
+                <article class="culture-card">
+                    <div class="culture-icon">🐉</div>
+                    <h3>鳌鱼文化</h3>
+                    <p>在中国传统文化中，鳌（áo）通常指大龟或大鳖。传说中龙生九子，其中一种名为“赑屃”，喜负重，常背负石碑。鳌头象征着独占鳌头、金榜题名的美好愿景，也是当地建筑与民俗中常见的吉祥元素。</p>
+                </article>
+                <article class="culture-card">
+                    <div class="culture-icon">🏯</div>
+                    <h3>古建筑遗存</h3>
+                    <p>鳌头镇保留了大量具有岭南特色的古建筑群。这些建筑融合了广府民居的特点，飞檐翘角、青砖灰瓦，展现了精湛的木雕、砖雕技艺，是研究岭南建筑艺术不可多得的实物资料。</p>
+                </article>
+                <article class="culture-card">
+                    <div class="culture-icon">🍜</div>
+                    <h3>特色饮食</h3>
+                    <p>受地理环境与历史迁徙的影响，鳌头饮食文化丰富多样。既有传统的广式早茶点心，也有结合客家风味的特色菜肴。当地特产的农家菜，食材新鲜，口味清淡，深受食客喜爱。</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 旅游指南 -->
+    <section id="tour" class="container">
+        <div class="section-title">
+            <h2>必游景点</h2>
+            <p>精选鳌头及周边热门打卡地</p>
+        </div>
+        <div class="tour-grid">
+            <div class="tour-card">
+                <img src="https://picsum.photos/seed/river/400/300" alt="流溪河风光">
+                <div class="tour-overlay">
+                    <h4>流溪河国家森林公园</h4>
+                    <span>自然生态 · 空气清新</span>
+                </div>
+            </div>
+            <div class="tour-card">
+                <img src="https://picsum.photos/seed/temple/400/300" alt="古村落">
+                <div class="tour-overlay">
+                    <h4>西和村古建筑群</h4>
+                    <span>历史遗迹 · 文化探秘</span>
+                </div>
+            </div>
+            <div class="tour-card">
+                <img src="https://picsum.photos/seed/farm/400/300" alt="现代农业">
+                <div class="tour-overlay">
+                    <h4>现代农业示范基地</h4>
+                    <span>田园风光 · 亲子体验</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 常见问题 -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>常见问题</h2>
+                <p>关于鳌头旅游与生活的解答</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">鳌头镇在哪个城市？</div>
+                    <div class="faq-answer">
+                        <p>鳌头镇隶属于广东省广州市从化区，位于从化区的西北部，是广州的“北大门”。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">去鳌头旅游的最佳时间是什么时候？</div>
+                    <div class="faq-answer">
+                        <p>鳌头四季皆宜。春季气候宜人，适合赏花踏青；夏季可前往流溪河避暑；秋季天高气爽，适合登山；冬季相对温和，适合品尝农家菜。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">鳌头有什么特色美食推荐？</div>
+                    <div class="faq-answer">
+                        <p>推荐尝试当地的客家盐焗鸡、清蒸水库鱼以及各式农家时蔬。镇上也有许多经营多年的老字号茶楼，可以体验正宗的广式早茶文化。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于鳌头</h4>
+                    <p>鳌头网致力于提供最真实、最全面的鳌头镇本地信息，连接传统与现代，服务每一位访客。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#about">镇情概况</a></li>
+                        <li><a href="#culture">文化特色</a></li>
+                        <li><a href="#tour">旅游指南</a></li>
+                        <li><a href="#">政府官网</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>地址：广东省广州市从化区鳌头镇</li>
+                        <li>邮箱：info@atou.com</li>
+                        <li>电话：020-12345678</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 鳌头网 版权所有 | 本站内容仅供参考，具体信息请以当地官方发布为准。</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 广告脚本 -->
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+
+    <!-- 交互脚本 -->
+    <script>
+        // FAQ 折叠功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                item.querySelector('.faq-question').addEventListener('click', () => {
+                    // 如果需要手风琴效果（打开一个关闭其他），取消下面注释
+                    /*
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) otherItem.classList.remove('active');
+                    });
+                    */
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

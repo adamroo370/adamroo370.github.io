@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="黑龙江卫视直播频道提供高清流畅的电视直播观看服务，涵盖新闻资讯、综艺娱乐、纪录片等丰富内容，支持在线实时播放，是您了解黑龙江及国内外动态的首选平台。">
+    <meta name="keywords" content="黑龙江卫视直播,黑龙江卫视,电视直播,高清直播,黑龙江新闻,综艺频道">
+    <title>黑龙江卫视直播 - 高清电视在线观看与节目回放平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #f8f9fa;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --border-color: #e0e0e0;
+            --accent-color: #d32f2f;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            color: var(--text-dark);
+            background-color: #fff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spacing-unit) 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-dark);
+            font-size: 16px;
+            font-weight: normal;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            font-size: 16px;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .search-btn {
+            background: none;
+            border: 1px solid var(--border-color);
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #003366 0%, #0056b3 100%);
+            padding: 40px 20px;
+            color: #fff;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        /* Live Player Section */
+        .player-container {
+            max-width: var(--container-width);
+            margin: -40px auto 0;
+            position: relative;
+            z-index: 10;
+            background: #000;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            aspect-ratio: 16/9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .player-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            background: #1a1a1a;
+        }
+
+        .play-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .play-icon:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .play-icon::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 20px solid #fff;
+            border-top: 12px solid transparent;
+            border-bottom: 12px solid transparent;
+            margin-left: 5px;
+        }
+
+        .channel-info {
+            text-align: center;
+            color: #ccc;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background-color: #28a745;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+
+        /* Channel Grid */
+        .channels-section {
+            max-width: var(--container-width);
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 22px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+        }
+
+        .channel-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .channel-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        .channel-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .card-preview {
+            height: 120px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 14px;
+            position: relative;
+        }
+
+        .card-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+
+        .card-info {
+            padding: 15px;
+        }
+
+        .card-info h3 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .card-info p {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        /* Content Tabs */
+        .tabs-container {
+            max-width: var(--container-width);
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        .tab-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            color: var(--text-light);
+            border-bottom: 2px solid transparent;
+            margin-bottom: -2px;
+            transition: all 0.3s;
+        }
+
+        .tab-btn.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .program-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .program-item {
+            display: flex;
+            padding: 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            align-items: center;
+        }
+
+        .program-time {
+            font-weight: bold;
+            color: var(--primary-color);
+            min-width: 80px;
+            font-size: 15px;
+        }
+
+        .program-details {
+            flex: 1;
+        }
+
+        .program-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        .program-desc {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        /* Features */
+        .features {
+            background-color: var(--secondary-color);
+            padding: 60px 20px;
+            margin-top: 60px;
+        }
+
+        .features-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-box {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .feature-box h3 {
+            margin-bottom: 10px;
+        }
+
+        .feature-box p {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #999;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 24px;
+            }
+
+            .player-container {
+                margin-top: 0;
+                border-radius: 0;
+            }
+
+            .program-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <a href="#" class="logo">
+            黑龙江卫视
+            <span>直播平台</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#live">直播频道</a></li>
+                <li><a href="#schedule">节目单</a></li>
+                <li><a href="#about">关于我们</a></li>
+            </ul>
+        </nav>
+        <button class="search-btn">🔍 搜索节目</button>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <h1>关注龙江动态，精彩触手可及</h1>
+        <p>黑龙江卫视高清直播，实时呈现新闻资讯、综艺娱乐与特色文化内容</p>
+    </section>
+
+    <!-- Live Player -->
+    <section id="live" class="player-container">
+        <div class="player-placeholder">
+            <div class="play-icon" onclick="alert('正在尝试连接黑龙江卫视高清信号...')"></div>
+            <div class="channel-info">
+                <span class="status-badge">LIVE 正在直播</span>
+                <h3>黑龙江卫视 HD</h3>
+                <p>当前信号源：网络流媒体</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Channel Grid -->
+    <section class="channels-section">
+        <h2 class="section-title">热门直播频道</h2>
+        <div class="channel-grid">
+            <div class="channel-card">
+                <div class="card-preview">
+                    <img src="https://picsum.photos/seed/hljtv1/300/200" alt="黑龙江卫视">
+                    <span style="position: absolute; bottom: 0; right: 0; background: rgba(0,0,0,0.7); color: #fff; padding: 2px 6px; font-size: 12px;">HD</span>
+                </div>
+                <div class="card-info">
+                    <h3>黑龙江卫视</h3>
+                    <p>综合频道 · 新闻与综艺</p>
+                </div>
+            </div>
+            <div class="channel-card">
+                <div class="card-preview">
+                    <img src="https://picsum.photos/seed/hljtv2/300/200" alt="都市频道">
+                    <span style="position: absolute; bottom: 0; right: 0; background: rgba(0,0,0,0.7); color: #fff; padding: 2px 6px; font-size: 12px;">HD</span>
+                </div>
+                <div class="card-info">
+                    <h3>都市频道</h3>
+                    <p>生活服务 · 城市资讯</p>
+                </div>
+            </div>
+            <div class="channel-card">
+                <div class="card-preview">
+                    <img src="https://picsum.photos/seed/hljtv3/300/200" alt="影视频道">
+                    <span style="position: absolute; bottom: 0; right: 0; background: rgba(0,0,0,0.7); color: #fff; padding: 2px 6px; font-size: 12px;">HD</span>
+                </div>
+                <div class="card-info">
+                    <h3>影视频道</h3>
+                    <p>电影 · 电视剧集</p>
+                </div>
+            </div>
+            <div class="channel-card">
+                <div class="card-preview">
+                    <img src="https://picsum.photos/seed/hljtv4/300/200" alt="少儿频道">
+                    <span style="position: absolute; bottom: 0; right: 0; background: rgba(0,0,0,0.7); color: #fff; padding: 2px 6px; font-size: 12px;">HD</span>
+                </div>
+                <div class="card-info">
+                    <h3>少儿频道</h3>
+                    <p>儿童动画 · 亲子教育</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Schedule -->
+    <section id="schedule" class="tabs-container">
+        <h2 class="section-title">今日节目单</h2>
+        <div class="tabs">
+            <div class="tab-btn active" onclick="openTab(event, 'news')">新闻资讯</div>
+            <div class="tab-btn" onclick="openTab(event, 'variety')">综艺娱乐</div>
+            <div class="tab-btn" onclick="openTab(event, 'doc')">纪录片</div>
+        </div>
+
+        <div id="news" class="tab-content active">
+            <div class="program-list">
+                <div class="program-item">
+                    <div class="program-time">07:00</div>
+                    <div class="program-details">
+                        <div class="program-title">早安黑龙江</div>
+                        <div class="program-desc">黑龙江地区早间新闻综合报道</div>
+                    </div>
+                </div>
+                <div class="program-item">
+                    <div class="program-time">12:00</div>
+                    <div class="program-details">
+                        <div class="program-title">新闻联播</div>
+                        <div class="program-desc">中央电视台新闻联播节目</div>
+                    </div>
+                </div>
+                <div class="program-item">
+                    <div class="program-time">18:30</div>
+                    <div class="program-details">
+                        <div class="program-title">黑龙江新闻联播</div>
+                        <div class="program-desc">聚焦龙江大事，关注民生百态</div>
+                    </div>
+                </div>
+                <div class="program-item">
+                    <div class="program-time">22:00</div>
+                    <div class="program-details">
+                        <div class="program-title">黑龙江晚间报道</div>
+                        <div class="program-desc">晚间新闻盘点与回顾</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="variety" class="tab-content">
+            <div class="program-list">
+                <div class="program-item">
+                    <div class="program-time">11:00</div>
+                    <div class="program-details">
+                        <div class="program-title">快乐大本营</div>
+                        <div class="program-desc">经典综艺娱乐节目重播</div>
+                    </div>
+                </div>
+                <div class="program-item">
+                    <div class="program-time">15:30</div>
+                    <div class="program-details">
+                        <div class="program-title">天天向上</div>
+                        <div class="program-desc">青年励志脱口秀</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="doc" class="tab-content">
+            <div class="program-list">
+                <div class="program-item">
+                    <div class="program-time">14:00</div>
+                    <div class="program-details">
+                        <div class="program-title">探索发现</div>
+                        <div class="program-desc">自然与人文科学探索</div>
+                    </div>
+                </div>
+                <div class="program-item">
+                    <div class="program-time">20:00</div>
+                    <div class="program-details">
+                        <div class="program-title">舌尖上的中国</div>
+                        <div class="program-desc">美食文化纪录片</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="features-container">
+            <div class="feature-box">
+                <div class="feature-icon">📡</div>
+                <h3>高清流畅</h3>
+                <p>支持多种清晰度切换，提供稳定流畅的直播观看体验。</p>
+            </div>
+            <div class="feature-box">
+                <div class="feature-icon">📱</div>
+                <h3>多端同步</h3>
+                <p>支持电脑、手机、平板等多种终端设备随时随地观看。</p>
+            </div>
+            <div class="feature-box">
+                <div class="feature-icon">🔄</div>
+                <h3>节目回放</h3>
+                <p>部分热门节目支持精彩片段回放与点播服务。</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-col">
+            <h4>关于黑龙江卫视</h4>
+            <p style="font-size: 14px; line-height: 1.8;">
+                黑龙江卫视是黑龙江广播电视台旗下的上星综合频道，致力于为观众提供权威的新闻资讯、丰富的娱乐内容和优质的视听服务。
+            </p>
+        </div>
+        <div class="footer-col">
+            <h4>快速链接</h4>
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">直播回看</a></li>
+                <li><a href="#">节目预告</a></li>
+                <li><a href="#">联系合作</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>帮助中心</h4>
+            <ul>
+                <li><a href="#">常见问题</a></li>
+                <li><a href="#">观看指南</a></li>
+                <li><a href="#">意见反馈</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>&copy; 2023 黑龙江卫视直播服务平台. 仅供演示使用，版权归属黑龙江广播电视台。</p>
+    </div>
+</footer>
+
+<script>
+    function openTab(evt, tabName) {
+        var i, tabContent, tabBtn;
+        
+        // 隐藏所有 Tab 内容
+        tabContent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabContent.length; i++) {
+            tabContent[i].style.display = "none";
+            tabContent[i].classList.remove("active");
+        }
+        
+        // 移除所有 Tab 按钮的 active 类
+        tabBtn = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < tabBtn.length; i++) {
+            tabBtn[i].className = tabBtn[i].className.replace(" active", "");
+        }
+        
+        // 显示当前 Tab 并添加 active 类
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
+
+</body>
+</html>
